@@ -15,6 +15,7 @@ import {
 
 import style1 from './src/style1.style';
 import products from './src/productsJson';
+import ProductCard from './src/ProductCard';
 
 
 
@@ -29,18 +30,7 @@ function App() {
       <TextInput style={style1.search} onChangeText={(e) => setSearchKey(this.value)} value={searchKey}     
       placeholder="Ara..." />
 
-      <>
-        <FlatList data={products} renderItem={({item, index}) => (
-          <View>
-             <Image style={style1.image} source={{uri:item.imgURL}} />
-            <Text>{item.title}</Text>
-            <Text>{item.price}</Text>
-          </View>
-        )} 
-        />
-         
-        
-      </>
+      <ProductCard></ProductCard>
   </>
     
   );
