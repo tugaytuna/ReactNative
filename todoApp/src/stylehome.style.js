@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 
 
 const HomeStyle = StyleSheet.create({
+    Allcontainer: {
+        backgroundColor: "#576F72",
+        flex: 1,
+    },
     container: {
         margin: 3,
         marginBottom: 20,

@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,16 +6,18 @@ import {
 } from 'react-native';
 
 import NewTask from './src/NewTask';
-
 import Tasks from './src/Tasks';
-
 import HomeStyle from './src/stylehome.style';
 
 
+
+
 function App() {
- 
+
+
+
   return (
-   <>
+   <View style={HomeStyle.Allcontainer}>
     <View style={HomeStyle.container}>
       <Text style={HomeStyle.title}>Yapılacaklar</Text>
       <Text style={HomeStyle.counter} >0</Text>
@@ -27,7 +29,7 @@ function App() {
 
 
 
-   </>
+   </View>
   );
 }
 
