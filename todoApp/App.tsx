@@ -9,7 +9,7 @@ import NewTask from './src/NewTask';
 import Tasks from './src/Tasks';
 import HomeStyle from './src/stylehome.style';
 
-
+import InitTasks from './src/InitTasks';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
    <View style={HomeStyle.Allcontainer}>
     <View style={HomeStyle.container}>
       <Text style={HomeStyle.title}>Yapılacaklar</Text>
-      <Text style={HomeStyle.counter} >0</Text>
+      <Text style={HomeStyle.counter} >{InitTasks.length}</Text>
     </View>
 
     <Tasks></Tasks>

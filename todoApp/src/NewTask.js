@@ -3,13 +3,29 @@ import { Alert, Button, Text, TextInput, TouchableOpacity, View } from 'react-na
 
 import newTaskStyle from './newTask.style';
 
+import InitTasks from './InitTasks';
+
+
 function NewTask() {
+
+
+    const buttonClicked = () => {
+        InitTasks.push({
+            id: 6,
+            title: "deneme",
+            done: true,
+          });
+
+          console.log(InitTasks);
+    }
+
+
 
   return (
     <View style={newTaskStyle.container}>
     <TextInput placeholder='Yapılacak...' style={newTaskStyle.textinput} />
     
-    <TouchableOpacity style={newTaskStyle.buttonSt}>
+    <TouchableOpacity onPress={buttonClicked} style={newTaskStyle.buttonSt}>
         <Text style={newTaskStyle.buttonText}>Kaydet</Text>
     </TouchableOpacity>
 
