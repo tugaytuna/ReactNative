@@ -16,8 +16,15 @@ function App() {
  
   return (
    <>
-    <Text>Yapılacaklar</Text>
-    <Text style={HomeStyle.title}>0</Text>
+    <View style={HomeStyle.container}>
+      <Text style={HomeStyle.title}>Yapılacaklar</Text>
+      <Text style={HomeStyle.counter} >0</Text>
+    </View>
+
+    <Tasks></Tasks>
+
+    <NewTask></NewTask>
+
 
 
    </>

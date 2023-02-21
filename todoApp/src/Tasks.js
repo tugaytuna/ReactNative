@@ -1,9 +1,15 @@
 import React from 'react'
-import { Text } from 'react-native/types'
+import { Text, TouchableOpacity, View } from 'react-native'
+
+import taskStyle from "./tasks.style"
 
 function Tasks() {
   return (
-    <Text>Tasks</Text>
+    <View>
+        <TouchableOpacity style={taskStyle.container}>
+            <Text>Tasks</Text>
+        </TouchableOpacity>
+    </View>
   )
 }
 
