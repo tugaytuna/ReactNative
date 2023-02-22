@@ -12,5 +12,6 @@ export default StyleSheet.create({
     title: {
         color: "white",
         fontWeight: "bold",
+        
     },  
 })

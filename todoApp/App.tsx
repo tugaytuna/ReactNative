@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {
+  Alert,
   StyleSheet,
   Text,
   View,
@@ -14,7 +15,18 @@ import InitTasks from './src/InitTasks';
 
 function App() {
 
+  const [taskNew, setTaskNew] = useState("");
+//  const [count, setCount] = useState(InitTasks.length)
 
+  // function updateCountF(last = 5){
+  //   setCount(last);
+  // }
+
+
+  function getNewTask(tasknew = "kk") {
+    setTaskNew(tasknew)
+    // setUpdateListPropS("updated!")
+  }
 
   return (
    <View style={HomeStyle.Allcontainer}>
@@ -23,9 +35,9 @@ function App() {
       <Text style={HomeStyle.counter} >{InitTasks.length}</Text>
     </View>
 
-    <Tasks></Tasks>
+    <Tasks  newTaskInfo={taskNew} ></Tasks>
 
-    <NewTask></NewTask>
+    <NewTask props={getNewTask}></NewTask>
 
 
 
