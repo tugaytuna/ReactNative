@@ -4,14 +4,24 @@ import {
   View,
 } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Categories from './src/Categories';
+
+const Stack = createNativeStackNavigator();
+
+
 
 function App(){
   
 
   return (
-        <View>
-          <Text>Tarifka</Text>
-        </View>
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Categories} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
