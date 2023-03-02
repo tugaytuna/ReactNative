@@ -1,10 +1,14 @@
 import React from 'react'
-import { Text, View } from 'react-native/types'
+import { Text, View, Image } from 'react-native'
+import style from "./Category.style";
 
-function Category() {
+function Category({title, image},prop) {
+
+
   return (
-    <View>
-        <Text>Category Item</Text>
+    <View style={style.contain}>
+      <Image style={style.image} src={image}></Image>
+       <Text style={style.text} >{title}</Text>
     </View>
   )
 }

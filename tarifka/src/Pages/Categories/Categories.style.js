@@ -4,6 +4,11 @@ import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
     contain: {
-        backgroundColor: "gray"
+        backgroundColor: "orange",
+    },
+    text: {
+        color: "white",
+        textAlign: "center",
+        
     }
 })
