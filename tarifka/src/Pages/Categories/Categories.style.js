@@ -8,7 +8,7 @@ export default StyleSheet.create({
     },
     text: {
         color: "white",
-        textAlign: "center",
-        
-    }
+        textAlign: "center",   
+    },
+    
 })

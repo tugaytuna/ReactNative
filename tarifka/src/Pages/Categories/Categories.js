@@ -1,5 +1,7 @@
-import {useState} from 'react'
-import { FlatList, Text, View } from 'react-native'
+import {useState, useEffect} from 'react'
+import { Button, FlatList, Text, View } from 'react-native'
+
+import axios from 'axios';
 
 import Category from '../../Components/Category';
 import style from "./Categories.style"
@@ -7,6 +9,31 @@ import style from "./Categories.style"
 
 
 function Categories() {
+
+    const api_categories = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
+    // const api_categories = "https://jsonplaceholder.typicode.com/users";
+    const api_imageLink = "https://www.themealdb.com/images/category/Goat.png";
+
+    useEffect(() => {
+  
+      getData();
+    },[])
+
+
+    function getData(){
+      console.log("started...");
+      // setData(axios.get(api_categories));
+      let data2 = null;
+      axios.get(api_categories).then((response) => {
+         data2 = response; 
+         console.log("finished");
+         console.log("let data2: ", data2.data.meals)
+         setData(data2.data.meals);
+     
+      }).catch(error => console.log(error));
+     
+      
+    }
 
   
     const [data, setData] = useState([
@@ -18,8 +45,9 @@ function Categories() {
 
   return (
     <View style={style.contain}>
+      {/* <Button title='get data' onPress={getData} /> */}
       <Text style={style.text}>Categories</Text>
-      <FlatList data={data} renderItem={({item}) => {return(<Category title={item.title} image={item.image} />)}}  />
+      <FlatList contentContainerStyle={{ paddingBottom: 100 }} data={data} renderItem={({item}) => {return(<Category title={item.strCategory} image={item.strCategory} />)}}  />
     </View>
   )
 }
