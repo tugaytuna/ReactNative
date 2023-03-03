@@ -1,16 +1,13 @@
 
-import React from 'react';
-
+import {useState, useEffect} from 'react';
 import {
+  FlatList,
   Text,
   View,
 } from 'react-native';
 
 
-
-
 function App() {
-  
 
   return (
     <View>
