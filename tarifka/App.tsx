@@ -23,7 +23,7 @@ function App(){
     <Stack.Navigator>
       <Stack.Screen name="Categories" component={Categories} options={{title: 'Categories', headerTitleAlign: "center", statusBarColor: "orange", navigationBarColor: "orange", headerTitleStyle:{fontWeight:"bold" ,color:"orange"} }} />
       <Stack.Screen name="MealList" component={MealList} options={{title: 'Meals', headerTitleAlign: "center", statusBarColor: "orange", navigationBarColor: "orange", headerTitleStyle:{fontWeight:"bold" ,color:"orange"} }} />
-      <Stack.Screen name="MealDetails" component={MealDetails} options={{title: 'Categories', headerTitleAlign: "center", statusBarColor: "orange", navigationBarColor: "orange", headerTitleStyle:{fontWeight:"bold" ,color:"orange"} }} />
+      <Stack.Screen name="MealDetails" component={MealDetails} options={{title: 'Detail', headerTitleAlign: "center", statusBarColor: "orange", navigationBarColor: "orange", headerTitleStyle:{fontWeight:"bold" ,color:"orange"} }} />
     </Stack.Navigator>
   </NavigationContainer>
   );
