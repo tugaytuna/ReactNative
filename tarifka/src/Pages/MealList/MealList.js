@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { FlatList, Text, View, TouchableWithoutFeedback } from 'react-native'
+import axios from 'axios'
+
 import MealListItem from '../../Components/MealListItem/MealListItem'
+
 
 import style from "./MealList.style"
 
-function MealList({route}) {
+function MealList({route, navigation}) {
   // console.log(route.params.strCategory);
+  const base_api_key = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
+  let api_key = "";
+  const fake_api = "https://jsonplaceholder.typicode.com/users";
 
   const [tempData, setTempData] = useState(
      [{
@@ -20,14 +26,34 @@ function MealList({route}) {
         }]
       );
 
-  const renderItems = (item) => {
-    console.log(item.item.strMeal);
-    console.log(item.item.strMealThumb);
+  const [data, setData] = useState();
 
+  
+
+
+  const getData = async () => {
+    api_key = base_api_key + route.params.strCategory;
+
+    const {data: response} = await axios.get(api_key);
+    setData(response.meals);
+  }
+
+  useEffect(() => {
+    getData();
+  },[])
+  
+  const mealOnClick = (id) => {
+    navigation.navigate("MealDetails",id);
+  }
+
+
+  const renderItems = ({item}) => {   
     return (
-      <View>
-        <MealListItem title={item.item.strMeal} image={item.item.strMealThumb} />
-      </View>
+      <TouchableWithoutFeedback onPress={() => {mealOnClick(item.idMeal)}}>
+        <View>
+          <MealListItem title={item.strMeal} image={item.strMealThumb} />
+        </View>
+      </TouchableWithoutFeedback>
     )
   }
 
@@ -36,7 +62,7 @@ function MealList({route}) {
   return (
     <View style={style.contain}>
         <Text style={style.title} >{route.params.strCategory}</Text>
-        <FlatList data={tempData} renderItem={(item) => renderItems(item)} />
+        <FlatList contentContainerStyle={{ paddingBottom: 100 }} data={data} renderItem={(item) => renderItems(item)} />
     </View>
   )
 }
