@@ -21,16 +21,10 @@ function Categories(props) {
 
 
     function getData(){
-      // console.log("started...");
-      // setData(axios.get(api_categories));
       let data2 = null;
       axios.get(api_categories).then((response) => {
          data2 = response; 
-        //  console.log("finished");
-        //  console.log("let data2: ", data2.data.meals)
-         //activity indicator
          setData(data2.data.meals);
-        //  console.log(data2.data.meals);
      
       }).catch(error => console.log(error));
      

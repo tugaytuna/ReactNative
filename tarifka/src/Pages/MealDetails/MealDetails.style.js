@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     contain:{
-        backgroundColor: "yellow",
+        
     },
     image: {
-        height: 200,
+        height: 300,
     },
     title: {
         fontSize: 24,
@@ -27,6 +27,12 @@ export default StyleSheet.create({
         marginLeft: 5,
         marginTop: 10,
         fontSize: 14,
-          
+        marginBottom: 15,
     },
+    button: {
+    },
+    scroll: {
+        flexGrow: 1,
+        marginBottom: 50,
+    }
 })
