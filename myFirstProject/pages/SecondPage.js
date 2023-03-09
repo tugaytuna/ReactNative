@@ -1,10 +1,17 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
+
+
 
 function SecondPage() {
+
+    const list = useSelector(s => s.nameList);
+
+
   return (
     <View>
-        <Text>Second Page</Text>
+        <Text>{list}</Text>
     </View>
   )
 }
