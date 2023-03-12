@@ -28,7 +28,7 @@ function App(){
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Jobs} />
+        <Drawer.Screen name="Home" component={Jobs} options={{title:"Jobs", headerTitleAlign: "center", headerTintColor:"#ee524e"}} />
         <Drawer.Screen name="Favorites" component={Favorites} />
         <Drawer.Screen name='JobDetails' component={JobDetails} options={{
     drawerItemStyle: { height: 0 }
