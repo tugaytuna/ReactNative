@@ -3,11 +3,12 @@ import { Button, Text, View, FlatList } from 'react-native'
 import JobSingleItem from '../../Components/JobSingleItem'
 
 import useFetch from '../../Components/getData/useFetch'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 function Jobs({navigation}) {
 
   const {data, loading, err} = useFetch("https://www.themuse.com/api/public/jobs?page=1");
-  const [dataResolve, setDataResolve] = useState([])
+  // const [dataResolve, setDataResolve] = useState([])
   const [localData, setLocalData] = useState([
     {
         "contents": "<p><strong>Now's our time to inspire the future of healthcare together.</strong><br><br>Siemens Healthineers is a leading global medical technology company with over 170 years of experience and 18,000 patents. More than 48,000 dedicated colleagues in over 70 countries are driven to shape the future of healthcare. We stand with our customers around the world to support them in delivering high quality care to their patients. An estimated 5 million patients across the globe benefit every day from our innovative technologies and services in the areas of diagnostic and therapeutic imaging, laboratory diagnostics and molecular medicine, as well as digital health and enterprise services. This is what truly matters to us.<br><br>Join our team now at Siemens Healthineers as Nuclear Pharmacist<br><br>Please note that this is primarily a night shift role at the PETNET Solutions pharmacy; flexibility to work alternative shifts required.<br><br><strong>This is a role well suited to an ambitious professional, looking for the next step in their career. As a </strong><strong>Nuclear Pharmacist</strong><strong>, you will be responsible for</strong>:<br><br><ul><li>Production of radionuclides</li><li>Preparation and testing of radiopharmaceuticals.</li><li>Dispensing of radiopharmaceuticals.</li><li>Ensures compliance with all regulatory commitments including the cGMP, Radiation Safety, Pharmacy laws and corporate policies and procedures and other applicable Federal, State and Local authorities.</li><li>Responsible and accountable under State Pharmacy Law, for all actions of personnel working in the permitted pharmacy area, in the absence of the Pharmacy Manager (PIC).</li><li>Delivers and ensures performance of aseptic techniques, including sterility test and pyrogen testing per company standard operating procedures.</li><li>Ensures performance of QC procedures using analytical equipment and chemical tests per company standard operating procedures.</li><li>Maintains all applicable documents and records.</li><li>Prepares shipment of radioactive materials according to procedure and licensing authorities requirements.</li><li>Provides support in operation and maintenance of cyclotron, chemistry modules, QC equipment and associated software</li></ul><strong>This position may suit you best if you are familiar with </strong><strong>what is below, and would like to do develop your career with Healthineers</strong><ul><li>Nuclear Pharmacy</li><li>Chemistry</li><li>Quality Control</li></ul><br><strong>Required skills to have for the success of this role:</strong><br><br><ul><li>Pharmacy License</li><li>Bachelors Degree</li><li>Communicates effectively with a proven ability to interpret information and provide and/or follow complex instructions.</li><li>Ability to work independently and/or as part of a cross-functional team.</li><li>Strong customer relations skills.</li><li>Working knowledge of MS Windows applications. </li></ul><strong>Physical Demands: </strong><br><br><ul><li>Ability to handle 100 lb. packages</li></ul><strong>Supervisory Duties: </strong><br><br><ul><li>Leads multiple non-exempt</li></ul><br>At Siemens Healthineers, we value those who dedicate their energy and passion to a greater cause. Our people make us unique as an employer in the med-tech industry. What unites and motivates our global team is the inspiration of our common purpose:  To innovate for healthcare, building on our remarkable legacy of pioneering ideas that translate into even better healthcare products and services. We recognize that taking ownership of our work allows both us and the company to grow. We offer you a flexible and dynamic environment and the space to move beyond your comfort zone to grow both personally and professionally.<br><br><strong>If you want to join us in transforming the way healthcare is delivered, visit our career site at </strong>https://usa.healthcare.siemens.com/careers<strong>.</strong><br><br>If you wish to find out more about the specific before applying, please visit: https://usa.healthcare.siemens.com/about.<br><br>As an equal-opportunity employer we are happy to consider applications from individuals with disabilities.<br><br>#LI-AW1<br><br>PETNET<br><br><b>Organization:</b> Siemens Healthineers<br><br><b>Company:</b> Siemens Medical Solutions USA, Inc.<br><br><b>Experience Level:</b> Early Professional<br><br><b>Full / Part time:</b> Full-time<br><br><b>Equal Employment Opportunity Statement</b><br>Siemens is an Equal Opportunity and Affirmative Action Employer encouraging diversity in the workplace. All qualified applicants will receive consideration for employment without regard to their race, color, creed, religion, national origin, citizenship status, ancestry, sex, age, physical or mental disability unrelated to ability, marital status, family responsibilities, pregnancy, genetic information, sexual orientation, gender expression, gender identity, transgender, sex stereotyping, order of protection status, protected veteran or military status, or an unfavorable discharge from military service, and other categories protected by federal, state or local law.<br><br><b>EEO is the Law</b><br>Applicants and employees are protected under Federal law from discrimination. To learn more, Click here.<br><br><b>Pay Transparency Non-Discrimination Provision</b><br>Siemens follows Executive Order 11246, including the Pay Transparency Nondiscrimination Provision. To learn more, Click here.<br><br><b>California Privacy Notice</b><br>California residents have the right to receive additional notices about their personal information. To learn more, click here.</p>",
@@ -82,23 +83,12 @@ function Jobs({navigation}) {
     console.log(localData[0].name);
   }
 
-  useState(() => {
-    // title, company, location, level
-    // let res = data.results;
-    console.log("state girildi!")
-    if (!loading){
-      setDataResolve(data.results);
-      console.log("state tamamlandı")
-    }
-
-  },[loading])
-
   const renderFlat = (item) => {
     // console.log(item);
     return (
-      <View>
+      <TouchableWithoutFeedback onPress={() => {navigation.navigate("JobDetails",{item: item})}}>
         <JobSingleItem data={item} />
-      </View>
+      </TouchableWithoutFeedback>
     )
   }
 
@@ -106,6 +96,14 @@ function Jobs({navigation}) {
     return (
       <View>
         <Text>Please Wait....</Text>
+      </View>
+    )
+  }
+
+  if (err) {
+    return (
+      <View>
+        <Text>Check your internet connection!</Text>
       </View>
     )
   }
