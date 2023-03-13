@@ -12,7 +12,7 @@ function useFetch(api) {
         .then((res) => {
             let {data: data} = res;
             setData(data);
-    
+            setLoading(false);
         })
         .catch((err) => {setErr(err)})
     }
