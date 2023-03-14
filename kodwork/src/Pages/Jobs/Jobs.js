@@ -84,7 +84,7 @@ function Jobs({navigation}) {
   }
 
   const renderFlat = (item) => {
-    // console.log(item);
+    // console.log("before you go the item is: ",item);
     return (
       <TouchableWithoutFeedback onPress={() => {navigation.navigate("JobDetails",{item: item})}}>
         <JobSingleItem data={item} />
