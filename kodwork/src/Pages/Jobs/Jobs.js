@@ -83,10 +83,22 @@ function Jobs({navigation}) {
     console.log(localData[0].name);
   }
 
+  const handleTapTouchable = (item) => {
+    console.log(item.item.contents)
+    navigation.navigate("JobDetails",{data:{
+      name: item.item.name,
+      location: item.item.locations[0].name,
+      level: item.item.levels[0].name,
+      detail: item.item.contents,
+    }})
+  }
+
+
+
   const renderFlat = (item) => {
     // console.log("before you go the item is: ",item);
     return (
-      <TouchableWithoutFeedback onPress={() => {navigation.navigate("JobDetails",{item: item})}}>
+      <TouchableWithoutFeedback onPress={() => handleTapTouchable(item)}>
         <JobSingleItem data={item} />
       </TouchableWithoutFeedback>
     )

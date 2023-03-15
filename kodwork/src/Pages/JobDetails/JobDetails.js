@@ -12,12 +12,12 @@ function JobDetails({route}) {
   ]);
   
   const [data, setData] = useState()
-  console.log("tıpatıp:",route.params.item.item.categories.name)
+  console.log("tıpatıp:",route.params.data.detail)
 
   useEffect(() => {
-    setData(route.params.item);
-
-    console.log("state data: ",data.item.categories[0].name)
+    // setData(route.params.item);
+    console.log("done")
+    // console.log("state data: ",data.item.categories[0].name)
   },[]);
 
 
@@ -25,17 +25,17 @@ function JobDetails({route}) {
   return (
   <View style={style.contain} >
     <View >
-      <Text style={style.title} >{data.item.categories[0].name}</Text>
+      <Text style={style.title} >{route.params.data.name}</Text>
       <View style={style.containLocation}>
         <Text style={style.locations} >Locations: </Text>
-        <Text style={style.locationsName} >Paris, France</Text>
+        <Text style={style.locationsName} >{route.params.data.location}</Text>
       </View>
       <View style={style.containLevel} >
         <Text style={style.jobLevel} >Job Level: </Text>
-        <Text style={style.jobLevelName}>data.levels[0].name</Text>
+        <Text style={style.jobLevelName}>{route.params.data.level}</Text>
       </View>
       <Text style={style.jobDetailsTitle} >Job Detail</Text>
-      <Text style={style.jobDetails} >lorem ipsum lorem ipsum</Text>
+      <Text style={style.jobDetails} >{route.params.data.detail}</Text>
     </View>
 
     <View style={style.buttons}>

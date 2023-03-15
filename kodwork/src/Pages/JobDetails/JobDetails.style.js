@@ -34,7 +34,7 @@ export default StyleSheet.create({
         fontWeight: "bold",
     },
     jobDetailsTitle:{
-        margin: 5,
+        margin: 10,
         fontSize: 20,
         textAlign: "center",
         fontWeight: "bold",
