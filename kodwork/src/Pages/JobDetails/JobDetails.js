@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Text, View, Button } from 'react-native'
+import { Text, View, Button, ScrollView } from 'react-native'
 
 import style from "./JobDetails.style"
 import { LogBox } from 'react-native';
@@ -24,7 +24,7 @@ function JobDetails({route}) {
   
   return (
   <View style={style.contain} >
-    <View >
+    <View style={style.contain}>
       <Text style={style.title} >{route.params.data.name}</Text>
       <View style={style.containLocation}>
         <Text style={style.locations} >Locations: </Text>
@@ -35,7 +35,9 @@ function JobDetails({route}) {
         <Text style={style.jobLevelName}>{route.params.data.level}</Text>
       </View>
       <Text style={style.jobDetailsTitle} >Job Detail</Text>
-      <Text style={style.jobDetails} >{route.params.data.detail}</Text>
+      <ScrollView style={style.jobDetails}>
+        <Text>{route.params.data.detail}</Text>
+      </ScrollView>
     </View>
 
     <View style={style.buttons}>
