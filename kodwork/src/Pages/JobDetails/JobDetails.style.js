@@ -49,8 +49,8 @@ export default StyleSheet.create({
         margin: 10,
         flexDirection: "row",
         justifyContent: "space-between",
-
+        
         // flex: 1,
-    }
+    },
 
 })

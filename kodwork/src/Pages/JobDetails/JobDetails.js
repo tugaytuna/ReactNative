@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { Text, View, Button, ScrollView } from 'react-native'
+import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
 
 import style from "./JobDetails.style"
 import { LogBox } from 'react-native';
+
+import CButton from '../../Components/CButton';
 
 
 
@@ -12,7 +14,7 @@ function JobDetails({route}) {
   ]);
   
   const [data, setData] = useState()
-  console.log("tıpatıp:",route.params.data.detail)
+  // console.log("tıpatıp:",route.params.data.detail)
 
   useEffect(() => {
     // setData(route.params.item);
@@ -20,6 +22,13 @@ function JobDetails({route}) {
     // console.log("state data: ",data.item.categories[0].name)
   },[]);
 
+  const onSubmitEvent = () => {
+    console.log("on Submit!")
+  }
+
+  const onFavoriteEvent = () => {
+    console.log("on Favorite!")
+  }
 
   
   return (
@@ -41,8 +50,8 @@ function JobDetails({route}) {
     </View>
 
     <View style={style.buttons}>
-      <Button title={"it will be custom"} />
-      <Button title={"it will be custom"} />
+      <CButton title={"Submit"} onTap={onSubmitEvent} />
+      <CButton title={"Favorite Job"} onTap={onFavoriteEvent}  />
     </View>
   </View>
   )
