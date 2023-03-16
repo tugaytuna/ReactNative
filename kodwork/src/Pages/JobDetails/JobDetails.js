@@ -13,21 +13,15 @@ function JobDetails({route}) {
     'Non-serializable values were found in the navigation state',
   ]);
   
-  const [data, setData] = useState()
-  // console.log("tıpatıp:",route.params.data.detail)
-
-  useEffect(() => {
-    // setData(route.params.item);
-    console.log("done")
-    // console.log("state data: ",data.item.categories[0].name)
-  },[]);
 
   const onSubmitEvent = () => {
     console.log("on Submit!")
+    // going to web site I think. You should get link from jobs page in route object
   }
 
   const onFavoriteEvent = () => {
     console.log("on Favorite!")
+    // after added a job on the favorite jobs, open the drawer
   }
 
   

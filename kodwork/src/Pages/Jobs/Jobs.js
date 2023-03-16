@@ -79,9 +79,9 @@ function Jobs({navigation}) {
         }
     },])
 
-  const getDataHandle = () => {
-    console.log(localData[0].name);
-  }
+  // const getDataHandle = () => {
+  //   console.log(localData[0].name);
+  // }
 
   const handleTapTouchable = (item) => {
     console.log(item.item.contents)
@@ -123,7 +123,7 @@ function Jobs({navigation}) {
 
   return (
     <View>
-      <Button title='go To Job Details' onPress={() => {getDataHandle()}} />
+      {/* <Button title='go To Job Details' onPress={() => {getDataHandle()}} /> */}
       
       <FlatList contentContainerStyle={{ paddingBottom: 60 }}   data={data.results} renderItem={(item) => renderFlat(item)} />
       

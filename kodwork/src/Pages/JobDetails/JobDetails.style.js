@@ -46,6 +46,7 @@ export default StyleSheet.create({
         flex: 1,
     },
     buttons: {
+        
         margin: 10,
         flexDirection: "row",
         justifyContent: "space-between",
