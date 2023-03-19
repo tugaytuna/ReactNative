@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
 
+import { useDispatch } from 'react-redux';
+
 import style from "./JobDetails.style"
 import { LogBox } from 'react-native';
-
 import CButton from '../../Components/CButton';
 
 
-
 function JobDetails({route}) {
+  const dispatch = useDispatch();
+
+
   LogBox.ignoreLogs([
     'Non-serializable values were found in the navigation state',
   ]);
@@ -16,6 +19,9 @@ function JobDetails({route}) {
 
   const onSubmitEvent = () => {
     console.log("on Submit!")
+
+    dispatch({type: "AddFavorite", payload: {name: "kk"}})
+
     // going to web site I think. You should get link from jobs page in route object
   }
 

@@ -12,20 +12,17 @@ import Jobs from './src/Pages/Jobs';
 import Favorites from './src/Pages/Favorites';
 import JobDetails from './src/Pages/JobDetails';
 
+import UserProvider from "./src/context/Provider"
+
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
-// function stackNav() {
-//   return (
-//     <Stack.Navigator>
-//       <Stack.Screen name="JobDetails" component={JobDetails} />
-//     </Stack.Navigator>
-//   );
-// }
+
 
 function App(){
  
   return (
+    <UserProvider>
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={Jobs} options={{title:"Jobs", headerTitleAlign: "center", headerTintColor:"#ee524e"}} />
@@ -35,7 +32,7 @@ function App(){
   }} />
       </Drawer.Navigator>
     </NavigationContainer>
-  
+    </UserProvider>
   );
 }
 
