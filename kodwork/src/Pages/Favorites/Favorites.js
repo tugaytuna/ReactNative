@@ -17,11 +17,14 @@ function Favorites() {
 
   const renderFavorites = (item) => {
 
-
+  const onTapRemove = () => {
+    console.log("tapped: ",item.index)
+    console.log("tapped!")
+  }
 
   return(
     <View>
-      <FavoriteSingleItem data={item} />
+      <FavoriteSingleItem onTap={onTapRemove} data={item} />
 
 
 
@@ -35,7 +38,7 @@ function Favorites() {
 
   return (
     <View>
-      <FlatList data={selectorReturn} renderItem={(item) => renderFavorites(item)} />
+      <FlatList  data={selectorReturn} renderItem={(item) => renderFavorites(item)} />
     </View>
   )
 }

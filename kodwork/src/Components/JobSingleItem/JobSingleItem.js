@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 import style from "./JobSingleItem.style"
 
 function JobSingleItem({data}) {
-  console.log("normally data is like: ", data)
+  // console.log("normally data is like: ", data)
 
   return (
     <View style={style.contain}>
