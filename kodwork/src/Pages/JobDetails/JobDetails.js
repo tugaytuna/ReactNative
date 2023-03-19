@@ -19,14 +19,20 @@ function JobDetails({route}) {
 
   const onSubmitEvent = () => {
     console.log("on Submit!")
-
-    dispatch({type: "AddFavorite", payload: {name: "kk"}})
-
     // going to web site I think. You should get link from jobs page in route object
   }
 
   const onFavoriteEvent = () => {
     console.log("on Favorite!")
+   
+    dispatch({type: "AddFavorite", payload: {data: {
+      name: route.params.data.name, 
+      company: route.params.data.company, // not yet
+      location: route.params.data.location,
+      level: route.params.data.level,
+    }}})
+
+
     // after added a job on the favorite jobs, open the drawer
   }
 

@@ -84,9 +84,10 @@ function Jobs({navigation}) {
   // }
 
   const handleTapTouchable = (item) => {
-    console.log(item.item.contents)
+    // console.log(item.item.company.name)
     navigation.navigate("JobDetails",{data:{
       name: item.item.name,
+      company: item.item.company.name,
       location: item.item.locations[0].name,
       level: item.item.levels[0].name,
       detail: item.item.contents,
