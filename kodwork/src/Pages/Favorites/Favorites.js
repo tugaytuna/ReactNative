@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, FlatList } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import { Divider } from '@rneui/themed';
 
 import JobSingleItem from '../../Components/JobSingleItem'
@@ -14,26 +14,35 @@ const testData = [{item: {name:"kk", company:{name:"kkcomp"}, locations:[{name: 
 function Favorites() {
 
   const selectorReturn = useSelector(s => s.favData)
+  const dispatch = useDispatch();
+
+  // if (!selectorReturn){
+  //   return(
+  //     <View>
+  //       <Text>There is no favorite job!</Text>
+  //     </View>
+  //   )
+  // }
+
+  console.log(selectorReturn)
 
   const renderFavorites = (item) => {
 
   const onTapRemove = () => {
     console.log("tapped: ",item.index)
+
+    dispatch({type: "DeleteOnes", payload: {removeIndex: item.index}})
     console.log("tapped!")
   }
 
   return(
     <View>
       <FavoriteSingleItem onTap={onTapRemove} data={item} />
-
-
-
-      {/* <JobSingleItem data={item} />
-      <CButton title='Remove' /> */}
-      {/* <Divider width={5} color={"#ee524e"} /> */}
     </View>
   )
 }
+
+ 
 
 
   return (

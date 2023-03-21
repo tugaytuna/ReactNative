@@ -21,7 +21,7 @@ function JobDetails({route}) {
     console.log("on Submit!")
 
     //Test
-    dispatch({type: "DeleteOnes", payload: {msg: "kk"}})
+   
 
 
     // going to web site I think. You should get link from jobs page in route object

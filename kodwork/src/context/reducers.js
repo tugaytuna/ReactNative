@@ -1,3 +1,5 @@
+
+
 export default function(state,action){
     switch (action.type) {
         case "AddFavorite":
@@ -5,9 +7,12 @@ export default function(state,action){
             return {...state, favData: [...state.favData, data]}
             break;
         case "DeleteOnes":
-            // console.log({...state.favData});
+         
         allData = {...state.favData};
-        return {...state, favData: allData}    
+        const index = action.payload.removeIndex;
+        console.log("alldata: ",allData)
+        allData.filter(r => {return(r.index != index)});
+        return {...state, favData: [allData]}    
         
         default:
             return {...state}
