@@ -16,10 +16,10 @@ React-native applications that I have developed with the trainings I have receiv
 details below...
 
 - [tarifka](https://github.com/tugaytuna/ReactNative/tree/main/tarifka) 
-- ![Alt text]("images/1.png")
-- ![Alt text]("images/2.png")
-- ![Alt text]("images/3.png")
-- ![Alt text]("images/4.png")
+- ![]("/images/1.png")
+- ![]("/images/2.png")
+- ![]("/images/3.png")
+- ![]("/images/4.png")
 
 
 
