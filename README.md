@@ -15,6 +15,17 @@ React-native applications that I have developed with the trainings I have receiv
 
 details below...
 
+- [tarifka](https://github.com/tugaytuna/ReactNative/tree/main/tarifka) 
+- ![Alt text](https://prnt.sc/PjcSRiW8f1nF "1")
+- ![Alt text](https://prnt.sc/hKqMQfcuhvqL "2")
+- ![Alt text](https://prnt.sc/sbvfq8APzI0x "3")
+- ![Alt text](https://prnt.sc/u8yWo3hn6P2t "4")
+
+
+
+
+
+
 **Tugay Tuna**
 
 
