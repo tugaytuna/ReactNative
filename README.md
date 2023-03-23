@@ -16,10 +16,10 @@ React-native applications that I have developed with the trainings I have receiv
 details below...
 
 - [tarifka](https://github.com/tugaytuna/ReactNative/tree/main/tarifka) 
-- ![]("/images/1.png")
-- ![]("/images/2.png")
-- ![]("/images/3.png")
-- ![]("/images/4.png")
+- ![](/images/1.png)
+- ![](/images/2.png)
+- ![](/images/3.png)
+- ![](/images/4.png)
 
 
 
