@@ -10,8 +10,15 @@ export default function(state,action){
          
         allData = {...state.favData};
         const index = action.payload.removeIndex;
-        console.log("alldata: ",allData)
-        allData.filter(r => {return(r.index != index)});
+        console.log("alldata: ",{allData})
+        // allData.map(r => {
+        //     if(r.index != index){
+        //         return {...state.favData};
+        //     }
+        // });
+        // allData[index] = null;
+
+        allData = allData.filter((kk) => kk.index != index);
         return {...state, favData: [allData]}    
         
         default:
